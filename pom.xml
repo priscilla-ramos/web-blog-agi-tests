@@ -33,14 +33,6 @@
             <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- WebDriverManager -->
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${wdm.version}</version>
-        </dependency>
-
     </dependencies>
 
     <build>

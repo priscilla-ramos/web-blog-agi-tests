@@ -2,13 +2,9 @@
 
 Automação de testes Web para a funcionalidade de **busca de artigos** do Blog do Agi.
 
----
-
 ## 🎯 Objetivo
 
 Validar o comportamento da busca de artigos considerando cenários relevantes para o usuário final, garantindo estabilidade e aderência ao funcionamento real do site.
-
----
 
 ## ✅ Cenários Automatizados
 
@@ -24,18 +20,15 @@ Validar o comportamento da busca de artigos considerando cenários relevantes pa
 4. **Nova busca após uma busca anterior**  
    → Deve permitir pesquisar novamente e atualizar os resultados
 
----
-
 ## 🛠 Tecnologias Utilizadas
 
 - Java 11
 - Maven
-- Selenium WebDriver
+- Selenium WebDriver (com Selenium Manager)
 - TestNG
-- WebDriverManager
 - IntelliJ IDEA Community Edition
 
----
+> O gerenciamento de drivers é realizado automaticamente pelo **Selenium Manager**, recurso nativo do Selenium 4, dispensando configurações manuais de ChromeDriver.
 
 ## 📁 Estrutura do Projeto
 
@@ -112,7 +105,7 @@ Este projeto possui um pipeline de **Integração Contínua** configurado com **
 
 A pipeline é executada a cada push ou pull request na branch `main` e:
 - Configura automaticamente o Java 11
-- Executa os testes via Maven em modo headless
+- Executa os testes via Maven em modo headless, utilizando o Selenium Manager para resolução automática do ChromeDriver
 - Garante que o projeto seja executável de forma independente do sistema operacional
 
 

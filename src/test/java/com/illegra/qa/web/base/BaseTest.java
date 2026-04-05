@@ -1,6 +1,5 @@
 package com.illegra.qa.web.base;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,11 +11,6 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        WebDriverManager.chromedriver()
-                .clearResolutionCache()
-                .clearDriverCache()
-                .setup();
-
         ChromeOptions options = new ChromeOptions();
 
         if ("true".equalsIgnoreCase(System.getProperty("headless"))) {
@@ -27,6 +21,6 @@ public class BaseTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
 
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver(options); // ✅ Selenium Manager gerencia o driver
     }
 }
