@@ -114,3 +114,7 @@ A pipeline é executada a cada push ou pull request na branch `main` e:
 - Configura automaticamente o Java 11
 - Executa os testes via Maven em modo headless
 - Garante que o projeto seja executável de forma independente do sistema operacional
+
+
+> Os testes também podem ser executados automaticamente via GitHub Actions,
+> tanto de forma automática (push/pull request) quanto manual através da aba Actions.
