@@ -28,12 +28,5 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Limpar cache do WebDriverManager (Windows/Linux/macOS)
-        run: |
-            echo "Cleaning WDM cache..."
-            rm -rf ~/.cache/selenium || true
-            rm -rf ~/.wdm || true
-          shell: bash
-
       - name: Executar testes com Maven (headless)
         run: mvn clean test -Dheadless=true
