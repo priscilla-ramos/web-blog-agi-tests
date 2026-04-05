@@ -106,3 +106,11 @@ Para garantir **estabilidade**, **simplicidade** e evitar **flakiness** causada 
 
 Essa abordagem reflete o comportamento real da aplicação e é uma prática comum em automações web profissionais para aplicações WordPress.
 
+# 🚀 Integração Contínua (CI)
+
+Este projeto possui um pipeline de **Integração Contínua** configurado com **GitHub Actions**, responsável por executar automaticamente os testes Selenium em múltiplos sistemas operacionais (**Linux, Windows e macOS**).
+
+A pipeline é executada a cada push ou pull request na branch `main` e:
+- Configura automaticamente o Java 11
+- Executa os testes via Maven em modo headless
+- Garante que o projeto seja executável de forma independente do sistema operacional

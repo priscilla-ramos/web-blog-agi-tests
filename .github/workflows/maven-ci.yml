@@ -1,4 +1,4 @@
-name: Java CI - Selenium Tests
+name: Java CI - Selenium Tests (Multi-OS)
 
 on:
   push:
@@ -8,7 +8,13 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    name: Run tests on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
       - name: Checkout do código
@@ -19,6 +25,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
+          cache: maven
 
-      - name: Executar testes com Maven
+      - name: Executar testes com Maven (headless)
         run: mvn clean test -Dheadless=true
